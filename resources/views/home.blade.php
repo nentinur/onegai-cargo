@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <div class="flex w-full items-center justify-between px-10 min-h-screen bg-gradient-to-t from-blue-200 to-white py-20">
+    <div class="flex w-full items-center justify-between px-10 min-h-screen bg-gradient-to-t from-blue-100 to-white py-20">
         <div>
             <h1 class="text-6xl font-bold text-primary-dark transition hover:scale-105 duration-300">
                 Onegai Indonesia Cargo
@@ -27,7 +27,7 @@
     </div>
 
     {{-- Tentang Kami Section --}}
-    <div class="flex flex-col w-full px-10 min-h-screen bg-gradient-to-b from-blue-200 to-white">
+    <div class="flex flex-col w-full px-10 min-h-screen bg-gradient-to-b from-blue-100 to-white">
         <div class="flex items-center justify-between max-w-7xl">
             <div>
                 <img src="{{ asset('assets/gif/customer.gif') }}" alt="" class="w-sm rounded-full">
