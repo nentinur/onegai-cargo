@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Tracking;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TrackingController;
 
 Route::get('/', function () {
@@ -16,3 +18,5 @@ Route::get('/tracking/{search}', function ($search) {
   // dd($search);
   return view('tracking', ['tracking' => \App\Models\Tracking::where('kode_pesanan', $search)->first()]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);
