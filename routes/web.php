@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -12,6 +13,8 @@ Route::get('/', function () {
 Route::get('/order', function () {
   return view('form');
 });
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/tracking', [TrackingController::class, 'index']);
 Route::get('/tracking/{search}', function ($search) {
@@ -19,4 +22,9 @@ Route::get('/tracking/{search}', function ($search) {
   return view('tracking', ['tracking' => \App\Models\Tracking::where('kode_pesanan', $search)->first()]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::middleware('auth')->group(
+  function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+  }
+);

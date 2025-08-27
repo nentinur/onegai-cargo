@@ -81,7 +81,7 @@
         <h2 class="text-4xl mt-16 font-bold text-center text-primary-dark">Kontak kami</h2>
         <div class="flex px-12">
             <div class="w-1/5">
-                <img src="{{ asset('assets/logo/OIC_BROWN (TR).png') }}" class="w-40" alt="">
+                <img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-40" alt="">
             </div>
             <div class="w-4/5 grid grid-cols-3 gap-3 items-center">
                 <div>
