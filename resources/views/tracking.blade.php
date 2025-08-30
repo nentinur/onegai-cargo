@@ -23,7 +23,7 @@
                     Search
                 </button>
             </form>
-            @if ($tracking->count())
+            @if ($tracking)
                 <div class="space-y-4">
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nama Pengirim</label>

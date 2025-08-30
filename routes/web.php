@@ -3,6 +3,7 @@
 use App\Models\Tracking;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TrackingController;
 
 Route::get('/', function () {
@@ -20,3 +21,4 @@ Route::get('/tracking/{search}', function ($search) {
 });
 
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/customer', [CustomerController::class, 'index']);
