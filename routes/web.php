@@ -16,11 +16,11 @@ Route::get('/order', function () {
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/tracking', [TrackingController::class, 'index']);
-Route::get('/tracking/{search}', function ($search) {
-  // dd($search);
-  return view('tracking', ['tracking' => \App\Models\Tracking::where('kode_pesanan', $search)->first()]);
-});
+Route::get('/tracking/', [TrackingController::class, 'index']);
+// Route::get('/tracking/{search}', function ($search) {
+//   // dd($search);
+//   return view('tracking', ['tracking' => \App\Models\Customer::where('kode_resi', $search)->first()]);
+// });
 
 Route::middleware('auth')->group(
   function () {

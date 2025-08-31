@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tracking;
 use App\Http\Requests\StoreTrackingRequest;
 use App\Http\Requests\UpdateTrackingRequest;
+use App\Models\Customer;
 
 class TrackingController extends Controller
 {
@@ -14,9 +14,10 @@ class TrackingController extends Controller
     public function index()
     {
         // dd(request('search'));
+        // $tracking = Customer::all();
         $tracking = null;
         if (request('search')) {
-            $tracking = Tracking::where('kode_pesanan', request('search'))->first();
+            $tracking = Customer::where('kode_resi', request('search'))->first();
         }
         return view('tracking', [
             'title' => 'Tracking',
@@ -44,7 +45,7 @@ class TrackingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tracking $tracking)
+    public function show(Customer $tracking)
     {
 
 
@@ -56,7 +57,7 @@ class TrackingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tracking $tracking)
+    public function edit(Customer $tracking)
     {
         //
     }
@@ -64,7 +65,7 @@ class TrackingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTrackingRequest $request, Tracking $tracking)
+    public function update(UpdateTrackingRequest $request, Customer $tracking)
     {
         //
     }
@@ -72,7 +73,7 @@ class TrackingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tracking $tracking)
+    public function destroy(Customer $tracking)
     {
         //
     }

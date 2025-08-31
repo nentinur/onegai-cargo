@@ -15,7 +15,7 @@
                 @csrf
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nomor Resi</label>
-                    <input type="text" name="search" value="{{ $tracking ? $tracking["kode_pesanan"] : "" }}" 
+                    <input type="text" name="search" value="{{ $tracking ? $tracking["kode_resi"] : "" }}" 
                     class="w-full border rounded px-3 py-2" required />
                 </div>
                 <button type="submit"
@@ -23,13 +23,66 @@
                     Search
                 </button>
             </form>
-            @if ($tracking->count())
+            @if ($tracking)
                 <div class="space-y-4">
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nama Pengirim</label>
-                    <input type="text" name="sender_name" class="w-full border rounded px-3 py-2" value="{{ $tracking ? $tracking["nama_pemesan"] : "" }}" disabled />
+                    <input type="text" name="sender_name" class="w-full border rounded px-3 py-2" value="{{ $tracking ? $tracking["nama_pengirim"] : "" }}" disabled />
                 </div>
+                @if (date_diff($tracking["created_at"], now())->days > 2)
                 <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">Posting/Collection</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">INDONESIA</label>
+                </div>
+                    
+                @endif
+                
+                @if (date_diff($tracking["created_at"], now())->days > 3)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">DISPATCH FROM OUTWARD OFFICE</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">JAKARTA SOEKARNO-HATTA</label>
+                </div>
+                    
+                @endif
+                @if (date_diff($tracking["created_at"], now())->days > 3)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">DISPATCH FROM TRANSIT OFFICE</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">SINGAPORE CHANGI AIRPORT</label>
+                </div>
+                    
+                @endif
+
+                @if (date_diff($tracking["created_at"], now())->days > 4)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">DISPATCH FROM TRANSIT OFFICE</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">BEIJING SHANGHAI INT. AIRPORT</label>
+                </div>
+                    
+                @endif
+
+                @if (date_diff($tracking["created_at"], now())->days > 4)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">ARRIVAL AT INWARD OFFICE EXCHANGE</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">OSAKA.INT</label>
+                </div>
+                    
+                @endif
+                
+                @if (date_diff($tracking["created_at"], now())->days > 4)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">HELD BY IMPORT CUSTOMS</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">OSAKA INT</label>
+                </div>
+                    
+                @endif
+                @if (date_diff($tracking["created_at"], now())->days > 5)
+                <div class="flex ">
+                    <label class="w-2/6 font-bold block text-primary-dark">PROCESSING AT DELIVERY</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">JAPAN AREA</label>
+                </div>
+                    
+                @endif
+                {{-- <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Email Pengirim</label>
                     <input type="text" name="sender_name" class="w-full border rounded px-3 py-2" value="{{ $tracking ? $tracking["email_pemesan"] : "" }}" disabled />
                 </div>
@@ -52,7 +105,7 @@
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Status Pengiriman</label>
                     <input type="text" name="sender_name" class="w-full border rounded px-3 py-2" value="{{ $tracking ? $tracking["status_pengiriman"] : "" }}" disabled />
-                </div>
+                </div> --}}
                 
             </div>
             @endif
