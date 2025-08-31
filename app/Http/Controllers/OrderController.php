@@ -26,5 +26,6 @@ class OrderController extends Controller
         $validatedData['created_at'] = now();
         $validatedData['updated_at'] = now();
         Customer::create($validatedData);
+        return redirect('/')->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
     }
 }
