@@ -10,38 +10,39 @@
                 </div>
             @endif
 
-            <form class="space-y-4">
+            <form class="space-y-4" action="/order" method="POST">
+                @csrf
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nama Pengirim</label>
-                    <input type="text" name="sender_name" class="w-full border rounded px-3 py-2" />
+                    <input type="text" name="nama_pengirim" class="w-full border rounded px-3 py-2" />
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Email</label>
-                    <input type="email" name="sender_email" class="w-full border rounded px-3 py-2" />
+                    <input type="email" name="email_pengirim" class="w-full border rounded px-3 py-2" />
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nomor Telpon</label>
-                    <input type="text" name="sender_phone" class="w-full border rounded px-3 py-2" />
+                    <input type="text" name="no_telp_pengirim" class="w-full border rounded px-3 py-2" />
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Alamat Pengirim</label>
-                    <textarea name="sender_address" class="w-full border rounded px-3 py-2"></textarea>
+                    <textarea name="alamat_pengirim" class="w-full border rounded px-3 py-2"></textarea>
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nama Penerima</label>
-                    <input type="text" name="recipient_name" class="w-full border rounded px-3 py-2" />
+                    <input type="text" name="nama_penerima" class="w-full border rounded px-3 py-2" />
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Nomor Telpon Penerima</label>
-                    <input type="text" name="recipient_phone" class="w-full border rounded px-3 py-2" />
+                    <input type="text" name="no_telp_penerima" class="w-full border rounded px-3 py-2" />
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Alamat Penerima</label>
-                    <textarea name="recipient_address" class="w-full border rounded px-3 py-2"></textarea>
+                    <textarea name="alamat_penerima" class="w-full border rounded px-3 py-2"></textarea>
                 </div>
                 <div class="flex ">
                     <label class="w-2/6 font-bold block text-primary-dark">Berat Barang (kg)</label>
-                    <input type="number" name="weight" step="0.1" class="w-full border rounded px-3 py-2" />
+                    <input type="number" name="berat_barang" step="0.1" class="w-full border rounded px-3 py-2" />
                 </div>
                 <button type="submit"
                     class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition transform hover:scale-105 w-full">

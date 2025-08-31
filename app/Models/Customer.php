@@ -10,4 +10,9 @@ class Customer extends Model
     /** @use HasFactory<\Database\Factories\CustomerFactory> */
     use HasFactory;
     protected $guarded = ['id'];
+
+    public static function store(array $data)
+    {
+        return self::create($data);
+    }
 }

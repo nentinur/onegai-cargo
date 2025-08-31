@@ -31,7 +31,7 @@
                 </div>
                 @if (date_diff($tracking["created_at"], now())->days > 2)
                 <div class="flex ">
-                    <label class="w-2/6 font-bold block text-primary-dark">Posting/Collection</label>
+                    <label class="w-2/6 font-bold block text-primary-dark">POSTING/COLLECTION</label>
                     <label class="w-2/6 font-bold block text-primary-dark">INDONESIA</label>
                 </div>
                     

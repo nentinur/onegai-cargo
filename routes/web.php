@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Models\Tracking;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TrackingController;
 
 Route::get('/', function () {
@@ -13,6 +13,8 @@ Route::get('/', function () {
 Route::get('/order', function () {
   return view('form');
 });
+Route::post('/order', [OrderController::class, 'store']);
+
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
