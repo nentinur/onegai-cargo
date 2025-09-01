@@ -24,9 +24,10 @@ Route::get('/tracking/', [TrackingController::class, 'index']);
 //   return view('tracking', ['tracking' => \App\Models\Customer::where('kode_resi', $search)->first()]);
 // });
 
-Route::middleware('auth')->group(
-  function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-  }
-);
+// Route::middleware('auth')->group(
+// function () {
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/user', [AdminController::class, 'user'])->name('list-user');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// }
+// );
