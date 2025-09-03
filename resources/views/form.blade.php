@@ -15,37 +15,43 @@
                 <div class="space-y-3">
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nama Pengirim</label>
-                        <input type="text" name="nama_pengirim" class="w-full border rounded px-3 py-2" />
+                        <input type="text" name="nama_pengirim"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Email</label>
-                        <input type="email" name="email_pengirim" class="w-full border rounded px-3 py-2" />
+                        <input type="email" name="email_pengirim"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nomor Telpon</label>
-                        <input type="text" name="no_telp_pengirim" class="w-full border rounded px-3 py-2" />
+                        <input type="text" name="no_telp_pengirim"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Alamat Pengirim</label>
-                        <textarea name="alamat_pengirim" class="w-full border rounded px-3 py-2"></textarea>
+                        <textarea name="alamat_pengirim" class="w-full border border-primary-light rounded px-3 py-2"></textarea>
                     </div>
                 </div>
                 <div class="space-y-4">
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nama Penerima</label>
-                        <input type="text" name="nama_penerima" class="w-full border rounded px-3 py-2" />
+                        <input type="text" name="nama_penerima"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nomor Telpon Penerima</label>
-                        <input type="text" name="no_telp_penerima" class="w-full border rounded px-3 py-2" />
+                        <input type="text" name="no_telp_penerima"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Alamat Penerima</label>
-                        <textarea name="alamat_penerima" class="w-full border rounded px-3 py-2"></textarea>
+                        <textarea name="alamat_penerima" class="w-full border border-primary-light rounded px-3 py-2"></textarea>
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Berat Barang (kg)</label>
-                        <input type="number" name="berat_barang" step="0.1" class="w-full border rounded px-3 py-2" />
+                        <input type="number" name="berat_barang" step="0.1"
+                            class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                 </div>
                 <div class="md:col-span-2">

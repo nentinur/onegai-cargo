@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-            <img src="{{ asset('assets/gif/delivery.gif') }}" alt="" class="w-48 md:w-90 rounded-full">
+            <img src="{{ asset('assets/gif/delivery.gif') }}" alt="" class="w-48 md:w-80 rounded-full">
         </div>
     </div>
 

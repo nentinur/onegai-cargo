@@ -3,8 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('assets/logo/OIC_BROWN.png') }}" type="image/x-icon" />
+
     <title>Onegai Indonesia Cargo</title>
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
+
+    {{-- Tailwind CSS CDN --}}
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D19C66",
+                        "primary-dark": "#6C5232",
+                        "primary-light": "#FBC97A",
+                    },
+                    fontFamily: {
+                        sans: ["Quicksand", "Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
@@ -50,6 +74,10 @@
                 class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition transform hover:scale-105 w-full">
                 Login
             </button>
+            <div class="flex justify-center">
+                <a class="text-center text-primary flex items-center py-2" href="/"><i
+                        class="ph ph-arrow-left text-xl px-2"></i> Kembali ke beranda</a>
+            </div>
         </form>
     </div>
 </body>

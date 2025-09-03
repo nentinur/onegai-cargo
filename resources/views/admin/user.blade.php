@@ -24,8 +24,8 @@
                         @endphp</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->name }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->email }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->phone }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->role }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">08811188881</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">admin</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">
                             <button class="bg-primary hover:bg-primary-light text-white px-2 py-1 rounded-lg"><i
                                     class="ph ph-pencil font-bold"></i></button>

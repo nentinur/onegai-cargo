@@ -2,26 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index()
     {
+        // Dummy data statistik
+        $stats = [
+            'total_today' => 100,
+            'sent' => 85,
+            'pending' => 25,
+            'delivered' => 56,
+        ];
 
-        return view('admin.index');
+        // Dummy data chart pesanan 7 hari
+        $weeklyChart = [
+            'labels' => ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+            'data' => [20, 35, 40, 30, 50, 25, 60],
+        ];
+
+        return view('admin.index', compact('stats', 'weeklyChart'));
     }
 
     public function user()
     {
-        $users = collect([
-            ['name' => 'John Doe', 'email' => 'john@example.com', 'phone' => '0811111111', 'role' => 'user'],
-            ['name' => 'Jane Smith', 'email' => 'jane@example.com', 'phone' => '0811111111', 'role' => 'user'],
-            ['name' => 'Alice Johnson', 'email' => 'alice@example.com', 'phone' => '0811111111', 'role' => 'admin'],
-            ['name' => 'Bob Brown', 'email' => 'bob@example.com', 'phone' => '0811111111', 'role' => 'user'],
-        ])->map(function ($user) {
-            return (object) $user;
-        });
+        $users = User::all();
         return view('admin.user', ['users' => $users]);
     }
 }

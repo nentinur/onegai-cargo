@@ -3,8 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('assets/logo/OIC_BROWN.png') }}" type="image/x-icon" />
+
     <title>Onegai Indonesia Cargo</title>
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
+
+    {{-- Tailwind CSS CDN --}}
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D19C66",
+                        "primary-dark": "#6C5232",
+                        "primary-light": "#FBC97A",
+                    },
+                    fontFamily: {
+                        sans: ["Quicksand", "Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
     <link rel="stylesheet" type="text/css"
@@ -18,7 +42,7 @@
 
 <body class="bg-white">
     <div class="w-full fixed top-0 left-0 md:h-18 z-10 flex items-center justify-between px-6 bg-white shadow-md">
-        <div><img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-12" alt=""></div>
+        <div><img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-12 md:w-14 py-2" alt=""></div>
         <!-- Mobile menu button -->
         <div class="md:hidden">
             <button id="menu-btn" class="text-primary-dark focus:outline-none">

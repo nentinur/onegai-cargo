@@ -3,8 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="{{ asset('assets/logo/OIC_BROWN.png') }}" type="image/x-icon" />
     <title>Onegai Indonesia Cargo</title>
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
+
+    {{-- Tailwind CSS CDN --}}
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D19C66",
+                        "primary-dark": "#6C5232",
+                        "primary-light": "#FBC97A",
+                    },
+                    fontFamily: {
+                        sans: ["Quicksand", "Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
 
     <!-- DataTables core -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -49,6 +73,8 @@
                         <i class="ph ph-user text-2xl text-primary-dark"></i>
                     </div>
                     <div>
+                        {{-- <div class="font-bold text-primary-dark text-sm">
+                            {{ Auth::user()->name ? Auth::user()->name : 'Admin' }}</div> --}}
                         <div class="font-bold text-primary-dark text-sm">Admin</div>
                     </div>
                 </div>
@@ -62,7 +88,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col items-center justify-center min-h-screen w-full bg-orange-50 pl-68 pr-6">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-orange-50 pl-64 ml-4 pr-6">
         @yield('content')
     </div>
 </body>
