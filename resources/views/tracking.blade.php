@@ -124,7 +124,7 @@
                                 </g>
                             </svg>
                             <span class="text-sm text-gray-500 mb-1">ARRIVAL AT INWARD OFFICE EXCHANGE</span>
-                            <span class="text-lg font-semibold text-primary-dark">OSAKA.INT</span>
+                            <span class="text-lg font-semibold text-primary-dark">OSAKA INT</span>
                         </div>
                         @endif
 

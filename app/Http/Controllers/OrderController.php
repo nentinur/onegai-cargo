@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Illuminate\Support\Facades\Mail;
+use App\Models\User;
+// use Illuminate\Support\Facades\Mail;
+use App\Notifications\OrderNotification;
+use Illuminate\Support\Facades\Notification;
 
 class OrderController extends Controller
 {
@@ -26,20 +29,44 @@ class OrderController extends Controller
         $validatedData['kode_resi'] = 'ONE-' . strtoupper(substr(uniqid(), 0, 6));
         $validatedData['created_at'] = now();
         $validatedData['updated_at'] = now();
-        Customer::create($validatedData);
-        Mail::raw(
-            'Terima kasih telah melakukan pemesanan. Kode resi Anda: ' . $validatedData['kode_resi'],
-            function ($message) use ($validatedData) {
-                $message->to('khafidz.edu@gmail.com', $validatedData['nama_pengirim'])
-                    ->subject('Kode Resi Pemesanan');
-            }
-        );
-        $waNumber = '6282120345259';
-        $message = 'Kode resi Anda: ' . $validatedData['kode_resi'];
-        $waApiUrl = 'https://api.whatsapp.com/send?phone=' . $waNumber . '&text=' . urlencode($message);
+
+
+        // Kirim notifikasi email
+        // User::first()->notify(new OrderNotification($data));
+
+
+
+        // Mail::raw(
+        //     'Terima kasih telah melakukan pemesanan. Kode resi Anda: ' . $validatedData['kode_resi'],
+        //     function ($message) use ($validatedData) {
+        //         $message->to('khafidz.edu@gmail.com', $validatedData['nama_pengirim'])
+        //             ->subject('Kode Resi Pemesanan');
+        //     }
+        // );
+        // $waNumber = '6282120345259';
+        // $message = 'Kode resi Anda: ' . $validatedData['kode_resi'];
+        // $waApiUrl = 'https://api.whatsapp.com/send?phone=' . $waNumber . '&text=' . urlencode($message);
         // Jika ingin redirect ke WhatsApp, gunakan:
         // return redirect($waApiUrl);
         // Jika hanya ingin mengirim, gunakan package pihak ketiga atau API WhatsApp Business.
-        return redirect('/order')->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
+
+
+
+        // Mail::to($validatedData['email_pengirim'])->send(new \App\Mail\OrderNotification($data)); 
+
+        if (Customer::create($validatedData)) {
+            // Customer berhasil dibuat
+            $data = [
+                'subject' => 'Order Confirmation',
+                'greeting' => 'Nama Pengirim ' . $validatedData['nama_pengirim'] . '!',
+                'body' => 'Telah melakukan order dengan nomer resi: ' . $validatedData['kode_resi'],
+            ];
+            Notification::route('mail', 'khafidz.edu@gmail.com')
+                ->notify(new OrderNotification($data));
+            return redirect('/order')->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
+        } else {
+            // Gagal membuat Customer
+            return redirect('/order')->with('error', 'Gagal membuat order. Silakan coba lagi.');
+        }
     }
 }
