@@ -39,7 +39,7 @@ class OrderNotification extends Notification
             ->greeting($this->mailData['greeting'])
             ->line($this->mailData['body'])
 
-            ->line('The introduction to the notification.')
+            // ->line('The introduction to the notification.')
             // ->action('Notification Action', url('/'))
             ->line('Thank you for using our application!');
     }
