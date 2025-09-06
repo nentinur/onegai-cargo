@@ -38,16 +38,13 @@
                 <div class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
                     <h3 class="text-xl font-semibold mb-4 text-primary-dark">Informasi Pengiriman</h3>
                     
+                    
                     <div class="flex mb-4">
-                        <label class="w-2/6 font-bold block text-primary-dark">Nomor Resi</label>
-                        <span class="w-4/6 text-primary-dark">{{ $tracking ? $tracking["kode_resi"] : "" }}</span>
-                    </div>
-                    <div class="flex mb-4">
-                        <label class="w-2/6 font-bold block text-primary-dark">Nama Pengirim</label>
-                        <span class="w-4/6 text-primary-dark">{{ $tracking ? $tracking["nama_pengirim"] : "" }}</span>
+                        <label class="w-2/6  block text-primary-dark">Nama Pengirim</label>
+                        <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_pengirim"] : "" }}</span>
                     </div>
                     <div class="flex flex-col gap-4">
-                        @if (date_diff($tracking["created_at"], now())->days > 0)
+                        @if (date_diff($tracking["created_at"], now())->days < 3)
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
