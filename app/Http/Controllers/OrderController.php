@@ -61,7 +61,7 @@ class OrderController extends Controller
                 'greeting' => 'Nama Pengirim ' . $validatedData['nama_pengirim'] . '!',
                 'body' => 'Telah melakukan order dengan nomer resi: ' . $validatedData['kode_resi'],
             ];
-            Notification::route('mail', 'khafidz.edu@gmail.com')
+            Notification::route('mail', 'aisyiahmissi@gmail.com') //'khafidz.edu@gmail.com')
                 ->notify(new OrderNotification($data));
             return redirect('/order')->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
         } else {
