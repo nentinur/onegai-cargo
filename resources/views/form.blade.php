@@ -10,30 +10,9 @@
                 </div>
             @endif
 
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" action="/order" method="POST">
+            <form class="mx-auto max-w-lg grid grid-cols-1 md:grid-cols-2 gap-6 justify-center" action="/order" method="POST">
                 @csrf
-                <div class="space-y-3">
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold text-primary-dark">Nama Pengirim</label>
-                        <input type="text" name="nama_pengirim"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold text-primary-dark">Email</label>
-                        <input type="email" name="email_pengirim"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold text-primary-dark">Nomor Telpon</label>
-                        <input type="text" name="no_telp_pengirim"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <label class="font-bold text-primary-dark">Alamat Pengirim</label>
-                        <textarea name="alamat_pengirim" class="w-full border border-primary-light rounded px-3 py-2"></textarea>
-                    </div>
-                </div>
-                <div class="space-y-4">
+                <div class="space-y-4 md:col-span-2">
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nama Penerima</label>
                         <input type="text" name="nama_penerima"
@@ -54,9 +33,9 @@
                             class="w-full border border-primary-light rounded px-3 py-2" />
                     </div>
                 </div>
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 flex justify-center">
                     <button type="submit"
-                        class="bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition transform hover:scale-105 w-full">
+                        class="bg-primary text-white px-10 py-2 rounded hover:bg-primary-dark transition transform hover:scale-105">
                         Submit
                     </button>
                 </div>
