@@ -1,31 +1,31 @@
 @extends('admin.layout')
 @section('content')
     <div class="p-5 m-5 bg-white rounded-lg shadow-lg min-h-[95vh] w-full flex flex-col">
-        <h1 class="text-4xl font-bold text-main mb-6 text-primary-dark">User</h1>
+        <h1 class="text-4xl font-bold text-main mb-6 text-primary-dark">Order</h1>
 
         <table id="list" class="hover w-full table-auto">
             <thead>
                 <tr class="text-left font-bold bg-secondary">
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">No</th>
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">No Resi</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Name</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Email</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Phone</th>
-                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Role</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Action
                     </th>
                 </tr>
             </thead>
             <tbody>
                 @php $i = 1; @endphp
-                @foreach ($users as $user)
+                @foreach ($orders as $order)
                     <tr>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">@php
                             echo $i;
                         @endphp</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->name }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->email }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $user->no_telp }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">admin</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->kode_resi }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->nama_pengirim }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->email_pengirim }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->no_telp_pengirim }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">
                             <button class="bg-primary hover:bg-primary-light text-white px-2 py-1 rounded-lg"><i
                                     class="ph ph-pencil font-bold"></i></button>

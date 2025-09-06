@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -30,5 +31,11 @@ class AdminController extends Controller
     {
         $users = User::all();
         return view('admin.user', ['users' => $users]);
+    }
+
+    public function list_order()
+    {
+        $orders = Customer::all();
+        return view('admin.order', ['orders' => $orders]);
     }
 }

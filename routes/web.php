@@ -18,7 +18,7 @@ Route::post('/order', [OrderController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/tracking/', [TrackingController::class, 'index']);
+Route::get('/tracking', [TrackingController::class, 'index']);
 // Route::get('/tracking/{search}', function ($search) {
 //   // dd($search);
 //   return view('tracking', ['tracking' => \App\Models\Customer::where('kode_resi', $search)->first()]);
@@ -28,6 +28,7 @@ Route::middleware('auth')->group(
   function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/user', [AdminController::class, 'user'])->name('list-user');
+    Route::get('/list-order', [AdminController::class, 'list_order'])->name('list_order');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
   }
 );
