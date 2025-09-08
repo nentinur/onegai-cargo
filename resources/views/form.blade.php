@@ -7,11 +7,12 @@
             @if (session()->has('success'))
                 
                 @php
-                $phoneNumber = '+6287717121990';
+                $phoneNumber = ['+6282119777677','+6285159952797'];
                 $kodeResi = request()->query('kode_resi', '');
                 $message = 'Hallo admin, Saya mau konfirmasi bahwa saya sudah melakukan order dengan kode resi: ' . $kodeResi . ' Terima kasih.';
                 $encodedMessage = urlencode($message);
-                $whatsappUrl = "https://wa.me/{$phoneNumber}?text={$encodedMessage}";
+                // $whatsappUrl = "https://wa.me/{$phoneNumber[random()]}?text={$encodedMessage}";
+                $whatsappUrl = "https://wa.me/{$phoneNumber[array_rand($phoneNumber)]}?text={$encodedMessage}";
                 @endphp
                 <div class="bg-green-100 text-green-800 p-4 mb-4 rounded max-w-lg mx-auto justify-center text-center">
                     {{ session('success') }} 
