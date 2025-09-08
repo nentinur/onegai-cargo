@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Customer;
 use App\Models\User;
+use App\Models\Customer;
+use Illuminate\Support\Str;
 // use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Notifications\OrderNotification;
 use Illuminate\Support\Facades\Notification;
 
@@ -15,22 +18,26 @@ class OrderController extends Controller
     {
         // return request()->all();
         $validatedData = $request->validate([
-            'nama_pengirim' => 'required|min:5|max:255',
-            'email_pengirim' => 'required|email',
-            'no_telp_pengirim' => 'required',
-            'alamat_pengirim' => 'required',
-            'nama_penerima' => 'required',
+            // 'nama_pengirim' => 'required|min:5|max:255',
+            // 'email_pengirim' => 'required|email',
+            // 'no_telp_pengirim' => 'required',
+            // 'alamat_pengirim' => 'required',
+            'nama_penerima' => 'required|min:4|max:255',
             'no_telp_penerima' => 'required',
             'alamat_penerima' => 'required',
             'berat_barang' => 'required|integer',
         ]);
 
-        // $validatedData['kode_resi'] = 'ONE-' . strtoupper(uniqid());
-        $validatedData['kode_resi'] = 'ONE-' . strtoupper(substr(uniqid(), 0, 6));
+        // inisialisasi kode_resi
+        $validatedData['kode_resi'] = 'ONE-' . date('dm') . strtoupper(Str::random(4)) . date('y');
         $validatedData['created_at'] = now();
         $validatedData['updated_at'] = now();
+        // dd($validatedData);
 
-
+        // Pastikan kode_resi unik
+        while (Customer::where('kode_resi', $validatedData['kode_resi'])->exists()) {
+            $validatedData['kode_resi'] = 'ONE-' . date('dm') . strtoupper(Str::random(4)) . date('y');
+        }
         // Kirim notifikasi email
         // User::first()->notify(new OrderNotification($data));
 
@@ -58,12 +65,13 @@ class OrderController extends Controller
             // Customer berhasil dibuat
             $data = [
                 'subject' => 'Order Confirmation',
-                'greeting' => 'Nama Pengirim ' . $validatedData['nama_pengirim'] . '!',
+                'greeting' => 'Nama Penerima ' . $validatedData['nama_penerima'] . '!',
                 'body' => 'Telah melakukan order dengan nomer resi: ' . $validatedData['kode_resi'],
             ];
-            Notification::route('mail', 'aisyiahmissi@gmail.com') //'khafidz.edu@gmail.com')
+            Notification::route('mail', 'khafidz.edu@gmail.com') //'aisyiahmissi@gmail.com') 
                 ->notify(new OrderNotification($data));
-            return redirect('/order')->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
+            return redirect('/order?kode_resi=' . $validatedData['kode_resi'])
+                ->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
         } else {
             // Gagal membuat Customer
             return redirect('/order')->with('error', 'Gagal membuat order. Silakan coba lagi.');
