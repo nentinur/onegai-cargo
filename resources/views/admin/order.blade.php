@@ -8,10 +8,10 @@
                 <tr class="text-left font-bold bg-secondary">
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">No</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">No Resi</th>
-                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Name</th>
-                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Email</th>
-                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Phone</th>
-                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Action
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Nama</th>
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Telepon</th>
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Alamat</th>
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Aksi
                     </th>
                 </tr>
             </thead>
@@ -23,14 +23,22 @@
                             echo $i;
                         @endphp</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->kode_resi }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->nama_pengirim }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->email_pengirim }}</td>
-                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->no_telp_pengirim }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->nama_penerima }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->no_telp_penerima }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->alamat_penerima }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">
-                            <button class="bg-primary hover:bg-primary-light text-white px-2 py-1 rounded-lg"><i
-                                    class="ph ph-pencil font-bold"></i></button>
-                            <button class="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded-lg"><i
-                                    class="ph ph-trash font-bold"></i></button>
+                            <div class="flex space-x-2">
+                                <button class="bg-primary hover:bg-primary-light text-white px-2 py-1 rounded-lg">
+                                    <i class="ph ph-pencil font-bold"></i>
+                                </button>
+                                <form action="/admin/posts/{{ $order->id }}" method="post" class="inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded-lg" onclick="return confirm('Yakin menghapus data?')">
+                                        <i class="ph ph-trash font-bold"></i>
+                                    </button>
+                                </form>
+                            </div>
 
                         </td>
                         @php

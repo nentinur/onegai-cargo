@@ -40,8 +40,8 @@
                     
                     
                     <div class="flex mb-4">
-                        <label class="w-2/6  block text-primary-dark">Nama Pengirim</label>
-                        <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_pengirim"] : "" }}</span>
+                        <label class="w-2/6  block text-primary-dark">Nama Penerima</label>
+                        <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_penerima"] : "" }}</span>
                     </div>
                     <div class="flex flex-col gap-4">
                         @if (date_diff($tracking["created_at"], now())->days < 3)
