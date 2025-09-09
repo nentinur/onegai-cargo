@@ -4,24 +4,49 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        // Dummy data statistik
+        // Data statistik
         $stats = [
-            'total_today' => 100,
-            'sent' => 85,
-            'pending' => 25,
-            'delivered' => 56,
+            'total_today' => Customer::whereDate('created_at', now()->toDateString())->count(),
+            // pending: pesanan yang dibuat kemarin (1 hari lalu)
+            'pending' => Customer::whereDate('created_at', now()->subDay()->toDateString())->count(),
+            // sent: pesanan yang dibuat lebih dari 3 hari lalu tapi tidak lebih dari 5 hari lalu (3-5 hari lalu)
+            'sent' => Customer::whereDate('created_at', '<=', now()->subDays(3)->toDateString())
+                ->whereDate('created_at', '>', now()->subDays(5)->toDateString())
+                ->count(),
+            // delivered: pesanan yang dibuat lebih dari 5 hari lalu
+            'delivered' => Customer::whereDate('created_at', '<=', now()->subDays(5)->toDateString())->count(),
         ];
 
-        // Dummy data chart pesanan 7 hari
+        // Data total pesanan 7 hari terakhir
+        Carbon::setLocale('id');
         $weeklyChart = [
-            'labels' => ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
-            'data' => [20, 35, 40, 30, 50, 25, 60],
+            'labels' => [
+                now()->subDays(6)->translatedFormat('l'),
+                now()->subDays(5)->translatedFormat('l'),
+                now()->subDays(4)->translatedFormat('l'),
+                now()->subDays(3)->translatedFormat('l'),
+                now()->subDays(2)->translatedFormat('l'),
+                now()->subDays(1)->translatedFormat('l'),
+                now()->translatedFormat('l'),
+            ],
+
+            'data' => [
+                Customer::whereDate('created_at', now()->subDays(6)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->subDays(5)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->subDays(4)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->subDays(3)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->subDays(2)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->subDays(1)->toDateString())->count(),
+                Customer::whereDate('created_at', now()->toDateString())->count(),
+            ],
+
         ];
 
         return view('admin.index', compact('stats', 'weeklyChart'));
@@ -35,7 +60,7 @@ class AdminController extends Controller
 
     public function list_order()
     {
-        $orders = Customer::all();
+        $orders = Customer::orderBy('created_at', 'desc')->get();
         return view('admin.order', ['orders' => $orders]);
     }
 }

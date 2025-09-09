@@ -9,13 +9,13 @@
                 <div class="text-2xl font-bold text-primary-dark">{{ $stats['total_today'] }}</div>
                 <div class="text-sm text-gray-600 mt-2">Total Pesanan Hari Ini</div>
             </div>
-            <div class="bg-green-100 rounded-xl p-6 flex flex-col items-center shadow">
-                <div class="text-2xl font-bold text-green-700">{{ $stats['sent'] }}</div>
-                <div class="text-sm text-gray-600 mt-2">Pesanan Dikirim</div>
-            </div>
             <div class="bg-yellow-100 rounded-xl p-6 flex flex-col items-center shadow">
                 <div class="text-2xl font-bold text-yellow-700">{{ $stats['pending'] }}</div>
                 <div class="text-sm text-gray-600 mt-2">Pesanan Pending</div>
+            </div>
+            <div class="bg-green-100 rounded-xl p-6 flex flex-col items-center shadow">
+                <div class="text-2xl font-bold text-green-700">{{ $stats['sent'] }}</div>
+                <div class="text-sm text-gray-600 mt-2">Pesanan Dikirim</div>
             </div>
             <div class="bg-blue-100 rounded-xl p-6 flex flex-col items-center shadow">
                 <div class="text-2xl font-bold text-blue-700">{{ $stats['delivered'] }}</div>
