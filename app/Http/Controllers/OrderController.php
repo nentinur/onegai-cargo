@@ -77,4 +77,42 @@ class OrderController extends Controller
             return redirect('/order')->with('error', 'Gagal membuat order. Silakan coba lagi.');
         }
     }
+
+    public function editOrder(Request $request)
+    {
+        $id = $request->id;
+        $order = Customer::find($id);
+
+        if (!$order) {
+            return back()->with(['error' => 'Pesanan tidak ditemukan!']);
+        }
+
+        $validatedData = $request->validate([
+            'nama_penerima' => 'required|min:4|max:255',
+            'no_telp_penerima' => 'required',
+            'alamat_penerima' => 'required',
+        ]);
+
+        $order->nama_penerima = $validatedData['nama_penerima'];
+        $order->no_telp_penerima = $validatedData['no_telp_penerima'];
+        $order->alamat_penerima = $validatedData['alamat_penerima'];
+        $order->updated_at = now();
+        $order->save();
+
+        return back()->with(['success' => 'Pesanan Berhasil diupdate!']);
+    }
+
+    public function deleteOrder(Request $request)
+    {
+        $id = $request->id;
+        $order = Customer::find($id);
+
+        if (!$order) {
+            return back()->with(['error' => 'Pesanan tidak ditemukan!']);
+        }
+
+        $order->delete();
+
+        return back()->with(['success' => 'Pesanan Berhasil dihapus!']);
+    }
 }
