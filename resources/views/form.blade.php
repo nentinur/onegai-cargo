@@ -49,8 +49,8 @@
                 <div class="space-y-4 md:col-span-2">
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Destinasi</label>
-                        <select class="w-full border border-primary-light rounded px-3 py-2" name="destinasi"
-                            id="destinasi">
+                        <select class="w-full border border-primary-light rounded px-3 py-2" name="destinasi" id="destinasi"
+                            required>
                             <option value="">Pilih Rute</option>
                             <option value="id_jp">Indonesia - Jepang</option>
                             <option value="jp_id">Jepang - Indonesia</option>
@@ -59,22 +59,25 @@
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nama Penerima</label>
                         <input type="text" name="nama_penerima"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
+                            class="w-full border border-primary-light rounded px-3 py-2" required />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nomor Telpon Penerima</label>
                         <input type="text" name="no_telp_penerima"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
+                            class="w-full border border-primary-light rounded px-3 py-2" required />
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Berat Barang (kg)</label>
                         <input type="number" name="berat_barang" step="0.1"
-                            class="w-full border border-primary-light rounded px-3 py-2" />
+                            class="w-full border border-primary-light rounded px-3 py-2" required />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="font-bold text-primary-dark">Alamat Penerima</label>
+                        <textarea name="alamat_penerima" class="w-full border border-primary-light rounded px-3 py-2" required></textarea>
                     </div>
 
                     {{-- ================= INDONESIA ================= --}}
-                    <div id="form-indonesia" class="hidden space-y-3">
-                        <label class="font-bold text-primary-dark">Alamat Penerima</label>
+                    {{-- <div id="form-indonesia" class="hidden space-y-3">
                         <div class="flex flex-col gap-1">
                             <label for="provinsi" class="font-bold text-primary-dark text-sm">Provinsi</label>
                             <select id="provinsi" class="w-full border border-primary-light rounded px-3 py-2">
@@ -107,10 +110,10 @@
                                 dll.)</label>
                             <textarea name="alamat_penerima" class="w-full border border-primary-light rounded px-3 py-2"></textarea>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- ================= JEPANG ================= --}}
-                    <div id="form-jepang" class="hidden space-y-3">
+                    {{-- <div id="form-jepang" class="hidden space-y-3">
                         <label class="font-bold text-primary-dark">Alamat Penerima</label>
                         <div class="flex flex-col gap-1">
                             <label for="prefecture" class="font-bold text-primary-dark text-sm">Prefektur</label>
@@ -130,8 +133,7 @@
                                 dll.)</label>
                             <textarea name="alamat_penerima" class="w-full border border-primary-light rounded px-3 py-2"></textarea>
                         </div>
-                    </div>
-
+                    </div> --}}
                 </div>
         </div>
         <div class="md:col-span-2 flex justify-center mt-4">
@@ -143,7 +145,7 @@
         </form>
     </div>
     </div>
-    <script>
+    {{-- <script>
         document.getElementById("destinasi").addEventListener("change", function() {
             let indoForm = document.getElementById("form-indonesia");
             let jpnForm = document.getElementById("form-jepang");
@@ -228,7 +230,7 @@
                     });
                 });
         });
-    </script>
+    </script> --}}
     @php
         session()->forget('success');
     @endphp
