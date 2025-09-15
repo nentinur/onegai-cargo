@@ -179,7 +179,7 @@
                                     
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">PROCESSING AT DELIVERY</span>
+                            <span class="text-sm text-gray-500 mb-1">POSTING/COLLECTION</span>
                             <span class="text-lg font-semibold text-primary-dark">JAPAN AREA</span>
                         </div>
                         @endif
@@ -195,7 +195,7 @@
                                     <rect x="16" y="26" width="8" height="2" rx="1" fill="#FFF"/>
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">HELD BY IMPORT CUSTOMS</span>
+                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM OUTWARD OFFICE</span>
                             <span class="text-lg font-semibold text-primary-dark">OSAKA INT</span>
                         </div>
                         @endif
@@ -211,7 +211,7 @@
                                     <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">ARRIVAL AT INWARD OFFICE EXCHANGE</span>
+                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM TRANSIT OFFICE</span>
                             <span class="text-lg font-semibold text-primary-dark">OSAKA INT</span>
                         </div>
                         @endif
@@ -247,7 +247,7 @@
                                     <rect x="16" y="18" width="8" height="4" rx="2" fill="#FFF"/>
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM TRANSIT OFFICE</span>
+                            <span class="text-sm text-gray-500 mb-1">ARRIVAL AT INWARD OFFICE EXCHANGE</span>
                             <span class="text-lg font-semibold text-primary-dark">SINGAPORE CHANGI AIRPORT</span>
                         </div>
                         @endif
@@ -265,7 +265,7 @@
                                     <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM OUTWARD OFFICE</span>
+                            <span class="text-sm text-gray-500 mb-1">HELD BY IMPORT CUSTOMS</span>
                             <span class="text-lg font-semibold text-primary-dark">JAKARTA SOEKARNO-HATTA</span>
                         </div>
                         @endif
@@ -281,7 +281,7 @@
                                     <rect x="16" y="24" width="8" height="2" rx="1" fill="#FFF"/>
                                 </g>
                             </svg>
-                            <span class="text-sm text-gray-500 mb-1">POSTING/COLLECTION</span>
+                            <span class="text-sm text-gray-500 mb-1">PROCESSING AT DELIVERY</span>
                             <span class="text-lg font-semibold text-primary-dark">INDONESIA</span>
                         </div>
                         @endif
