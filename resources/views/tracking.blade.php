@@ -180,7 +180,7 @@
                                 </g>
                             </svg>
                             <span class="text-sm text-gray-500 mb-1">POSTING/COLLECTION</span>
-                            <span class="text-lg font-semibold text-primary-dark">JAPAN AREA</span>
+                            <span class="text-lg font-semibold text-primary-dark">JAPAN</span>
                         </div>
                         @endif
                         
@@ -282,7 +282,7 @@
                                 </g>
                             </svg>
                             <span class="text-sm text-gray-500 mb-1">PROCESSING AT DELIVERY</span>
-                            <span class="text-lg font-semibold text-primary-dark">INDONESIA</span>
+                            <span class="text-lg font-semibold text-primary-dark">INDONESIA AREA</span>
                         </div>
                         @endif
                     </div>
