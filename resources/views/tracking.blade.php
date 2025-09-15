@@ -43,6 +43,10 @@
                         <label class="w-2/6  block text-primary-dark">Nama Penerima</label>
                         <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_penerima"] : "" }}</span>
                     </div>
+
+                    @if($tracking["dari"] == "Indonesia")
+
+
                     <div class="flex flex-col gap-4">
                         @if (date_diff($tracking["created_at"], now())->days < 3)
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
@@ -157,6 +161,134 @@
                         </div>
                         @endif
                     </div>
+
+                    @endif
+
+                    @if($tracking["dari"] == "Jepang")
+
+
+                    <div class="flex flex-col gap-4">
+                        @if (date_diff($tracking["created_at"], now())->days < 3)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <rect x="14" y="18" width="12" height="4" rx="2" fill="#FFF"/>
+                                    <rect x="18" y="14" width="4" height="2" rx="1" fill="#FFF"/>
+                                    <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
+                                    
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">PROCESSING AT DELIVERY</span>
+                            <span class="text-lg font-semibold text-primary-dark">JAPAN AREA</span>
+                        </div>
+                        @endif
+                        
+
+                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <path d="M14 26v-8a6 6 0 1112 0v8" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="16" y="26" width="8" height="2" rx="1" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">HELD BY IMPORT CUSTOMS</span>
+                            <span class="text-lg font-semibold text-primary-dark">OSAKA INT</span>
+                        </div>
+                        @endif
+                        
+                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <path d="M20 14v12M14 20h12" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="16" y="18" width="8" height="4" rx="2" fill="#FFF"/>
+                                    <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">ARRIVAL AT INWARD OFFICE EXCHANGE</span>
+                            <span class="text-lg font-semibold text-primary-dark">OSAKA INT</span>
+                        </div>
+                        @endif
+
+                        
+
+                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <path d="M12 20h16M20 12v16" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="16" y="18" width="8" height="4" rx="2" fill="#FFF"/>
+                                    <rect x="18" y="14" width="4" height="2" rx="1" fill="#FFF"/>
+                                    <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM TRANSIT OFFICE</span>
+                            <span class="text-lg font-semibold text-primary-dark">BEIJING SHANGHAI INT. AIRPORT</span>
+                        </div>
+                        @endif
+
+                        
+
+                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <path d="M14 20h12M20 14v12" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="16" y="18" width="8" height="4" rx="2" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM TRANSIT OFFICE</span>
+                            <span class="text-lg font-semibold text-primary-dark">SINGAPORE CHANGI AIRPORT</span>
+                        </div>
+                        @endif
+                        
+                        
+                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <path d="M12 20h16M20 12v16" stroke="#FFF" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="16" y="18" width="8" height="4" rx="2" fill="#FFF"/>
+                                    <rect x="18" y="14" width="4" height="2" rx="1" fill="#FFF"/>
+                                    <rect x="18" y="24" width="4" height="2" rx="1" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">DISPATCH FROM OUTWARD OFFICE</span>
+                            <span class="text-lg font-semibold text-primary-dark">JAKARTA SOEKARNO-HATTA</span>
+                        </div>
+                        @endif
+                        
+                        @if (date_diff($tracking["created_at"], now())->days > 5)
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
+                                <g>
+                                    <circle cx="20" cy="20" r="12" fill="#F97316"/>
+                                    <rect x="10" y="18" width="20" height="4" rx="2" fill="#FFF"/>
+                                    <rect x="16" y="14" width="8" height="2" rx="1" fill="#FFF"/>
+                                    <rect x="16" y="24" width="8" height="2" rx="1" fill="#FFF"/>
+                                </g>
+                            </svg>
+                            <span class="text-sm text-gray-500 mb-1">POSTING/COLLECTION</span>
+                            <span class="text-lg font-semibold text-primary-dark">INDONESIA</span>
+                        </div>
+                        @endif
+                    </div>
+
+                    @endif
                 </div>
             @endif
             
