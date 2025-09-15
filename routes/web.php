@@ -14,6 +14,11 @@ Route::get('/order', function () {
   return view('form');
 });
 Route::post('/order', [OrderController::class, 'store']);
+Route::get('/order/getAddress/{country}', [OrderController::class, 'getAddress']);
+Route::get('/order/getAddress/id/{provinceId}', [OrderController::class, 'getRegencies']);
+Route::get('/order/getAddress/id/regency/{regencyId}', [OrderController::class, 'getDistricts']);
+Route::get('/order/getAddress/id/district/{districtId}', [OrderController::class, 'getVillages']);
+Route::get('/order/getAddress/jp/{prefectureId}', [OrderController::class, 'getCities']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
