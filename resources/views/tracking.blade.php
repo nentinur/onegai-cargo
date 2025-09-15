@@ -44,8 +44,7 @@
                         <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_penerima"] : "" }}</span>
                     </div>
 
-                    @if($tracking["destinasi"] == "Indonesia")
-
+                    @if($tracking["destinasi"] == "id_jp")
 
                     <div class="flex flex-col gap-4">
                         @if (date_diff($tracking["created_at"], now())->days < 3)
@@ -164,7 +163,7 @@
 
                     @endif
 
-                    @if($tracking["destinasi"] == "Jepang")
+                    @if($tracking["destinasi"] == "jp_id")
 
 
                     <div class="flex flex-col gap-4">

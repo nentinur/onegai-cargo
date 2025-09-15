@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('kode_resi')->unique();
-            $table->string('nama_pengirim');
-            $table->string('email_pengirim')->unique();
-            $table->string('no_telp_pengirim');
-            $table->text('alamat_pengirim');
+            // $table->string('nama_pengirim');
+            // $table->string('email_pengirim')->unique();
+            // $table->string('no_telp_pengirim');
+            // $table->text('alamat_pengirim');
             $table->string('nama_penerima');
             $table->string('no_telp_penerima');
             $table->text('alamat_penerima');
