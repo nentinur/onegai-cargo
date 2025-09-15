@@ -26,6 +26,7 @@ class OrderController extends Controller
             'no_telp_penerima' => 'required',
             'alamat_penerima' => 'required',
             'berat_barang' => 'required|integer',
+            'destinasi' => 'required',
         ]);
 
         // inisialisasi kode_resi
