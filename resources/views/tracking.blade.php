@@ -44,7 +44,7 @@
                         <span class="w-4/6 font-bold text-primary-dark">{{ $tracking ? $tracking["nama_penerima"] : "" }}</span>
                     </div>
 
-                    @if($tracking["dari"] == "Indonesia")
+                    @if($tracking["destinasi"] == "Indonesia")
 
 
                     <div class="flex flex-col gap-4">
@@ -164,7 +164,7 @@
 
                     @endif
 
-                    @if($tracking["dari"] == "Jepang")
+                    @if($tracking["destinasi"] == "Jepang")
 
 
                     <div class="flex flex-col gap-4">
