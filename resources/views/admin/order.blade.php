@@ -143,7 +143,6 @@
                 <!-- Action Buttons -->
             </div>
         </div>
-    </div>
 
     </div>
 

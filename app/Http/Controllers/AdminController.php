@@ -58,6 +58,37 @@ class AdminController extends Controller
         return view('admin.user', ['users' => $users]);
     }
 
+    public function editUser(Request $request)
+    {
+        $id = $request->id;
+        $user = User::find($id);
+
+        if (!$user) {
+            return back()->with(['error' => 'Data user tidak ditemukan!']);
+        }
+
+        $user->name = $request->nama;
+        $user->email = $request->email;
+        $user->updated_at = now();
+        $user->save();
+
+        return back()->with(['success' => 'User Berhasil diupdate!']);
+    }
+
+    public function deleteUser(Request $request)
+    {
+        $id = $request->id;
+        $order = User::find($id);
+
+        if (!$order) {
+            return back()->with(['error' => 'Data user tidak ditemukan!']);
+        }
+
+        $order->delete();
+
+        return back()->with(['success' => 'User Berhasil dihapus!']);
+    }
+
     public function list_order()
     {
         $orders = Customer::orderBy('created_at', 'desc')->get();
