@@ -121,17 +121,17 @@
                         </div>
                         <div class="flex flex-col gap-1">
                             <label class="font-bold text-primary-dark">Email</label>
-                            <input type="text" name="email" id="addEmail"
+                            <input type="text" name="email" id="addEmail" autocomplete="off"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
                         <div class="flex flex-col gap-1">
                             <label class="font-bold text-primary-dark">Password</label>
-                            <input type="password" name="password" id="addPassword"
+                            <input type="password" name="password" id="addPassword" autocomplete="new-password"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
                         <div class="flex flex-col gap-1">
                             <label class="font-bold text-primary-dark">Confirm Password</label>
-                            <input type="password" name="password_confirmation" id="addPassword"
+                            <input type="password" name="password_confirmation" id="addPassword" autocomplete="new-password"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
                     </div>
