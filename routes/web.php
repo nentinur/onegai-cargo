@@ -31,6 +31,7 @@ Route::middleware('auth')->group(
     Route::get('/user', [AdminController::class, 'user'])->name('list-user');
     Route::post('/user/delete', [AdminController::class, 'deleteUser'])->name('deleteUser');
     Route::post('/user/edit', [AdminController::class, 'editUser'])->name('editUser');
+    Route::post('/user/addUser', [AdminController::class, 'addUser'])->name('addUser');
     Route::get('/list-order', [AdminController::class, 'list_order'])->name('list_order');
     Route::post('/list-order/delete', [OrderController::class, 'deleteOrder'])->name('deleteOrder');
     Route::post('/list-order/edit', [OrderController::class, 'editOrder'])->name('editOrder');

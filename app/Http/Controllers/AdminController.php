@@ -58,6 +58,65 @@ class AdminController extends Controller
         return view('admin.user', ['users' => $users]);
     }
 
+    public function addUser(Request $request)
+    {
+
+        // dd($request->all());
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+
+        if ($request->password !== $request->password_confirmation) {
+            return back()->with(['error' => 'Password dan konfirmasi password tidak sesuai!']);
+        }
+
+        if (strlen($request->password) < 8) {
+            return back()->with(['error' => 'Password harus terdiri dari minimal 8 karakter!']);
+        }
+
+        if (User::where('email', $request->email)->exists()) {
+            return back()->with(['error' => 'Email sudah terdaftar!']);
+        }
+
+        if (empty($request->nama) || empty($request->email) || empty($request->password)) {
+            return back()->with(['error' => 'Semua field harus diisi!']);
+        }
+        if (!filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+            return back()->with(['error' => 'Format email tidak valid!']);
+        }
+
+        if (strlen($request->nama) > 255) {
+            return back()->with(['error' => 'Nama tidak boleh lebih dari 255 karakter!']);
+        }
+
+        if (strlen($request->email) > 255) {
+            return back()->with(['error' => 'Email tidak boleh lebih dari 255 karakter!']);
+        }
+
+        if (strlen($request->password) > 255) {
+            return back()->with(['error' => 'Password tidak boleh lebih dari 255 karakter!']);
+        }
+
+        if (!preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $request->email)) {
+            return back()->with(['error' => 'Format email tidak valid!']);
+        }
+
+        if (!preg_match('/^[a-zA-Z\s]+$/', $request->nama)) {
+            return back()->with(['error' => 'Nama hanya boleh mengandung huruf dan spasi!']);
+        }
+
+        User::create([
+            'name' => $request->nama,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        return back()->with(['success' => 'User berhasil ditambahkan!']);
+    }
+
     public function editUser(Request $request)
     {
         $id = $request->id;

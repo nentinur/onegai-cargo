@@ -2,7 +2,11 @@
 @section('content')
     <div class="p-5 m-5 bg-white rounded-lg shadow-lg min-h-[95vh] w-full flex flex-col">
         <h1 class="text-4xl font-bold text-main mb-6 text-primary-dark">User</h1>
-
+<button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-150 flex items-center justify-center" style="width: 100px;" onclick="openModalTambah()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+    </svg>
+    </button>
         @if (session()->has('error'))
             <div class="bg-red-100 text-red-700 rounded p-2 mb-2 text-sm">
                 {{ session('error') }}
@@ -13,6 +17,7 @@
                 {{ session('success') }}
             </div>
         @endif
+        
         <table id="list" class="hover w-full table-auto">
             <thead>
                 <tr class="text-left font-bold bg-secondary">
@@ -44,6 +49,7 @@
                                     onclick="openModalDelete({{ $user->id }})">
                                     <i class="ph ph-trash font-bold"></i>
                                 </button>
+                                
                             </div>
 
                         </td>
@@ -91,6 +97,57 @@
             </div>
         </div>
 
+        <div id="modalTambah" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
+            <div class="bg-white w-1/3 rounded-xl shadow-lg p-6 relative">
+                <!-- Header -->
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h2 class="text-xl font-semibold text-primary-dark">Tambah Data User</h2>
+                    </div>
+                    <button onclick="closeModalAdd()" class="text-gray-500 text-xl font-bold hover:text-black">
+                        &times;
+                    </button>
+                </div>
+                <hr>
+                <!-- Body -->
+                <form action="{{ route('addUser') }}" method="POST">
+                    @csrf
+                    <input type="text" name="id" value="" id="editOrderId" hidden>
+                    <div class="flex flex-col gap-3 mt-4">
+                        <div class="flex flex-col gap-1">
+                            <label class="font-bold text-primary-dark">Nama</label>
+                            <input type="text" name="nama" id="addNama"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="font-bold text-primary-dark">Email</label>
+                            <input type="text" name="email" id="addEmail"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="font-bold text-primary-dark">Password</label>
+                            <input type="password" name="password" id="addPassword"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="font-bold text-primary-dark">Confirm Password</label>
+                            <input type="password" name="password_confirmation" id="addPassword"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                    </div>
+                    <div class="flex justify-between gap-2 mt-6">
+                        <button onclick="closeModalAdd()" type="button"
+                            class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">
+                            Batal
+                        </button>
+                        <button type="submit"
+                            class="bg-primary text-white px-2 py-1 text-sm rounded hover:bg-primary-light">
+                            Simpan
+                        </button>
+                </form>
+            </div>
+        
+
         <div id="modalEdit" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
             <div class="bg-white w-1/3 rounded-xl shadow-lg p-6 relative">
                 <!-- Header -->
@@ -131,9 +188,11 @@
                 </form>
             </div>
         </div>
+        
     </div>
 
     <script>
+        
         function openModalDelete(id) {
             $('#deleteUserId').val(id);
             document.getElementById("modalDelete").classList.remove("hidden");
@@ -141,6 +200,15 @@
 
         function closeModalDelete() {
             document.getElementById("modalDelete").classList.add("hidden");
+        }
+
+
+        function openModalTambah() {
+            document.getElementById("modalTambah").classList.remove("hidden");
+        }
+
+        function closeModalAdd() {
+            document.getElementById("modalTambah").classList.add("hidden");
         }
 
         function openModalEdit(id, resi, nama, telepon, alamat) {
@@ -153,6 +221,7 @@
         function closeModalEdit() {
             document.getElementById("modalEdit").classList.add("hidden");
         }
+
     </script>
 
     <script>
