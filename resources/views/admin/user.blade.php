@@ -71,7 +71,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-primary-dark">Hapus User</h2>
                     </div>
-                    <button onclick="closeModalDelete()" class="text-gray-500 text-xl font-bold hover:text-black">
+                    <button onclick="closeModal('modalDelete')" class="text-gray-500 text-xl font-bold hover:text-black">
                         &times;
                     </button>
                 </div>
@@ -86,7 +86,7 @@
                     </div>
                     <!-- Action Buttons -->
                     <div class="flex justify-between gap-2 mt-6">
-                        <button onclick="closeModalDelete()" type="button"
+                        <button onclick="closeModal('modalDelete')" type="button"
                             class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">
                             Batal
                         </button>
@@ -98,99 +98,83 @@
             </div>
         </div>
 
+        <!-- MODAL ADD -->
         <div id="modalTambah" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
             <div class="bg-white w-1/3 rounded-xl shadow-lg p-6 relative">
-                <!-- Header -->
                 <div class="flex justify-between items-start">
-                    <div>
-                        <h2 class="text-xl font-semibold text-primary-dark">Tambah Data User</h2>
-                    </div>
-                    <button onclick="closeModalAdd()" class="text-gray-500 text-xl font-bold hover:text-black">
-                        &times;
-                    </button>
+                    <h2 class="text-xl font-semibold text-primary-dark">Tambah Data User</h2>
+                    <button onclick="closeModal('modalTambah')"
+                        class="text-gray-500 text-xl font-bold hover:text-black">&times;</button>
                 </div>
                 <hr>
-                <!-- Body -->
                 <form action="{{ route('addUser') }}" method="POST">
                     @csrf
-                    <input type="text" name="id" value="" id="editOrderId" hidden>
                     <div class="flex flex-col gap-3 mt-4">
-                        <div class="flex flex-col gap-1">
+                        <div>
                             <label class="font-bold text-primary-dark">Nama</label>
                             <input type="text" name="nama" id="addNama"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
-                        <div class="flex flex-col gap-1">
+                        <div>
                             <label class="font-bold text-primary-dark">Email</label>
-                            <input type="text" name="email" id="addEmail" autocomplete="off"
+                            <input type="text" name="email" id="addEmail"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
-                        <div class="flex flex-col gap-1">
+                        <div>
                             <label class="font-bold text-primary-dark">Password</label>
-                            <input type="password" name="password" id="addPassword" autocomplete="new-password"
+                            <input type="password" name="password" id="addPassword"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
-                        <div class="flex flex-col gap-1">
+                        <div>
                             <label class="font-bold text-primary-dark">Confirm Password</label>
-                            <input type="password" name="password_confirmation" id="addPassword" autocomplete="new-password"
+                            <input type="password" name="password_confirmation" id="addPasswordConfirm"
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
                     </div>
                     <div class="flex justify-between gap-2 mt-6">
-                        <button onclick="closeModalAdd()" type="button"
-                            class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">
-                            Batal
-                        </button>
+                        <button onclick="closeModal('modalTambah')" type="button"
+                            class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">Batal</button>
                         <button type="submit"
-                            class="bg-primary text-white px-2 py-1 text-sm rounded hover:bg-primary-light">
-                            Simpan
-                        </button>
+                            class="bg-primary text-white px-2 py-1 text-sm rounded hover:bg-primary-light">Simpan</button>
+                    </div>
                 </form>
             </div>
-
-
-            <div id="modalEdit" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
-                <div class="bg-white w-1/3 rounded-xl shadow-lg p-6 relative">
-                    <!-- Header -->
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h2 class="text-xl font-semibold text-primary-dark">Edit Data User</h2>
-                        </div>
-                        <button onclick="closeModalEdit()" class="text-gray-500 text-xl font-bold hover:text-black">
-                            &times;
-                        </button>
-                    </div>
-                    <hr>
-                    <!-- Body -->
-                    <form action="{{ route('editUser') }}" method="POST">
-                        @csrf
-                        <input type="text" name="id" value="" id="editOrderId" hidden>
-                        <div class="flex flex-col gap-3 mt-4">
-                            <div class="flex flex-col gap-1">
-                                <label class="font-bold text-primary-dark">Nama</label>
-                                <input type="text" name="nama" id="editNama"
-                                    class="w-full border border-primary-light rounded px-3 py-2" />
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <label class="font-bold text-primary-dark">Email</label>
-                                <input type="text" name="email" id="editEmail"
-                                    class="w-full border border-primary-light rounded px-3 py-2" />
-                            </div>
-                        </div>
-                        <div class="flex justify-between gap-2 mt-6">
-                            <button onclick="closeModalEdit()" type="button"
-                                class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">
-                                Batal
-                            </button>
-                            <button type="submit"
-                                class="bg-primary text-white px-2 py-1 text-sm rounded hover:bg-primary-light">
-                                Simpan
-                            </button>
-                    </form>
-                </div>
-            </div>
-
         </div>
+
+        <!-- MODAL EDIT -->
+        <div id="modalEdit" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden">
+            <div class="bg-white w-1/3 rounded-xl shadow-lg p-6 relative">
+                <div class="flex justify-between items-start">
+                    <h2 class="text-xl font-semibold text-primary-dark">Edit Data User</h2>
+                    <button onclick="closeModal('modalEdit')"
+                        class="text-gray-500 text-xl font-bold hover:text-black">&times;</button>
+                </div>
+                <hr>
+                <form action="{{ route('editUser') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" id="editUserId">
+                    <div class="flex flex-col gap-3 mt-4">
+                        <div>
+                            <label class="font-bold text-primary-dark">Nama</label>
+                            <input type="text" name="nama" id="editNama"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                        <div>
+                            <label class="font-bold text-primary-dark">Email</label>
+                            <input type="text" name="email" id="editEmail"
+                                class="w-full border border-primary-light rounded px-3 py-2" />
+                        </div>
+                    </div>
+                    <div class="flex justify-between gap-2 mt-6">
+                        <button onclick="closeModal('modalEdit')" type="button"
+                            class="bg-gray-400 text-white px-2 py-1 text-sm rounded hover:bg-gray-600">Batal</button>
+                        <button type="submit"
+                            class="bg-primary text-white px-2 py-1 text-sm rounded hover:bg-primary-light">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
         <script>
             function openModalDelete(id) {
@@ -198,28 +182,22 @@
                 document.getElementById("modalDelete").classList.remove("hidden");
             }
 
-            function closeModalDelete() {
-                document.getElementById("modalDelete").classList.add("hidden");
-            }
-
-
             function openModalTambah() {
                 document.getElementById("modalTambah").classList.remove("hidden");
+                console.log("modal tambah muncul")
             }
 
-            function closeModalAdd() {
-                document.getElementById("modalTambah").classList.add("hidden");
-            }
-
-            function openModalEdit(id, resi, nama, telepon, alamat) {
+            function openModalEdit(id, nama, email) {
                 $('#editUserId').val(id);
                 $('#editNama').val(nama);
-                $('#editEmail').val(telepon);
+                $('#editEmail').val(email);
                 document.getElementById("modalEdit").classList.remove("hidden");
+                console.log("modal edit muncul")
             }
 
-            function closeModalEdit() {
-                document.getElementById("modalEdit").classList.add("hidden");
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).classList.add("hidden");
             }
         </script>
 
