@@ -13,6 +13,12 @@
                 {{ session('success') }}
             </div>
         @endif
+        <div class="my-2 justify-end flex text-sm">
+            <a href="/order" target="_blank"
+                class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition transform hover:scale-105">
+                Tambah Order
+            </a>
+        </div>
         <table id="list" class="hover w-full table-auto">
             <thead>
                 <tr class="text-left font-bold bg-secondary">

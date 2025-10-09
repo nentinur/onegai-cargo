@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin.layout')
 @section('content')
     <div class="min-h-screen w-full bg-gradient-to-t from-orange-100 to-white py-3 md:py-10 px-6">
         <div class="max-w-3xl mx-auto">

@@ -60,10 +60,10 @@
             <a href="/#about" class="font-bold text-primary-dark hover:text-dark-primary">Tentang Kami</a>
             <a href="/#contact" class="font-bold text-primary-dark hover:text-dark-primary">Kontak</a>
             <a href="/tracking" class="font-bold text-primary-dark hover:text-dark-primary">Tracking</a>
-            <a href="/order"
+            {{-- <a href="/order"
                 class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition transform hover:scale-105">
                 Pesan Layanan
-            </a>
+            </a> --}}
         </nav>
     </div>
     <!-- Mobile menu dropdown -->
@@ -73,10 +73,10 @@
             <a href="#about" class="font-bold text-primary-dark hover:text-dark-primary">Tentang Kami</a>
             <a href="#contact" class="font-bold text-primary-dark hover:text-dark-primary">Kontak</a>
             <a href="/tracking" class="font-bold text-primary-dark hover:text-dark-primary">Tracking</a>
-            <a href="/order"
+            {{-- <a href="/order"
                 class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition transform hover:scale-105">
                 Pesan Layanan
-            </a>
+            </a> --}}
         </nav>
     </div>
 
