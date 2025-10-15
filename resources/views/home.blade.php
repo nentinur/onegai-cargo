@@ -17,10 +17,10 @@
             <p class="mt-4 text-gray-600">
                 Yuk, kirim sekarang! Klik tombol di bawah untuk mulai pemesanan.
             </p>
-            <a href="/order"
+            {{-- <a href="/order"
                 class="mt-10 inline-block bg-primary hover:bg-primary-dark text-white px-6 md:px-8 py-3 rounded-lg transition transform hover:scale-105">
                 Pesan Sekarang
-            </a>
+            </a> --}}
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
             <img src="{{ asset('assets/gif/delivery.gif') }}" alt="" class="w-48 md:w-80 rounded-full">
