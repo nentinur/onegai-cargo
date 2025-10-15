@@ -10,9 +10,7 @@ Route::get('/', function () {
   return view('home');
 });
 
-Route::get('/order', function () {
-  return view('form');
-});
+
 Route::post('/order', [OrderController::class, 'store']);
 Route::get('/order/getAddress/{country}', [OrderController::class, 'getAddress']);
 Route::get('/order/getAddress/id/{provinceId}', [OrderController::class, 'getRegencies']);
@@ -27,6 +25,9 @@ Route::get('/tracking', [TrackingController::class, 'index']);
 
 Route::middleware('auth')->group(
   function () {
+    Route::get('/order', function () {
+      return view('form');
+    });
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/user', [AdminController::class, 'user'])->name('list-user');
     Route::post('/user/delete', [AdminController::class, 'deleteUser'])->name('deleteUser');
