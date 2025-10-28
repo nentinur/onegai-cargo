@@ -11,10 +11,10 @@ if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php'
 }
 
 // Register the Composer autoloader...
-require __DIR__ . '/../../onegai-cargo-dev/vendor/autoload.php';
+require __DIR__ . '/../../onegai-cargo/vendor/autoload.php';
 
 // Bootstrap Laravel and handle the request...
 /** @var Application $app */
-$app = require_once __DIR__ . '/../../onegai-cargo-dev/bootstrap/app.php';
+$app = require_once __DIR__ . '/../../onegai-cargo/bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
