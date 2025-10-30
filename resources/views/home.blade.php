@@ -139,8 +139,8 @@
             Kontak kami</h2>
         <div class="flex flex-col md:flex-row px-2 md:px-12 gap-8 md:gap-4 items-center w-full">
             <div class="w-full md:w-1/2 md:px-3 flex justify-center md:justify-between">
-                <div class="relative w-full h-80">
-                    <iframe class="absolute top-0 left-0 w-full h-full"
+                <div class="relative w-full h-80 m-3 bg-white rounded-lg shadow-lg border-4 border-white">
+                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.2188040565408!2d107.743246!3d-6.9055219999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68dda44ce380c5%3A0x9250a657cfafdc00!2sOnegai%20Cargo!5e0!3m2!1sid!2sid!4v1761571777212!5m2!1sid!2sid"
                         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                     </iframe>
@@ -150,16 +150,16 @@
                 <div>
                     <h2 class="pl-2 text-lg md:text-xl font-bold text-primary-dark">Alamat</h2>
                     <a class="flex items-start mt-2 text-primary-dark" href="https://maps.app.goo.gl/6TEAKiLTNy6nu9L98"><i
-                            class="ph ph-map-pin px-2 mt-2 text-xl"></i><span>Komplek Bumi Langgeng, Blok 19, No.5, RT
+                            class="ph ph-map-pin px-2 md:mt-2 text-xl"></i><span>Komplek Bumi Langgeng, Blok 19, No.5, RT
                             04/RW
                             22, Kel. Cimekar, Kec.
                             Cileunyi, Kab. Bandung, 40624</span></a>
-                    <div class="flex justify-center mt-4">
+                    <div class="md:flex justify-center mt-4 hidden">
                         <img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-20 md:w-34" alt="">
                     </div>
                 </div>
                 <div>
-                    <h2 class="mt-2 pl-2 text-lg md:text-xl font-bold text-primary-dark">Kontak WhatsApp</h2>
+                    <h2 class="md:mt-2 pl-2 text-lg md:text-xl font-bold text-primary-dark">Kontak WhatsApp</h2>
                     <ul class="mt-2 space-y-1.5">
                         <li class="text-primary-dark">
                             <a class="flex items-center"
@@ -200,4 +200,8 @@
                 rights reserved</p>
         </div>
     </div>
+    <a href="https://api.whatsapp.com/send?phone=6282119777677&text=Hallo%20onegai%20cargo%2C%20boleh%20info%20jastip%20indo%20-%20jepang%20nya%3F"
+        class="fixed bottom-6 right-6 flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg hover:scale-110 transition-all duration-300 z-[9999] backdrop-blur-sm bg-opacity-90">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+    </a>
 @endsection
