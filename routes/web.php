@@ -25,8 +25,8 @@ Route::get('/tracking', [TrackingController::class, 'index']);
 Route::middleware('auth')->group(
   function () {
     Route::get('/order', function () {
-  return view('form');
-});
+      return view('form');
+    });
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::get('/user', [AdminController::class, 'user'])->name('list-user');
     Route::post('/user/delete', [AdminController::class, 'deleteUser'])->name('deleteUser');
