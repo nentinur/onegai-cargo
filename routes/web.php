@@ -10,7 +10,6 @@ Route::get('/', function () {
   return view('home');
 });
 
-
 Route::post('/order', [OrderController::class, 'store']);
 Route::get('/order/getAddress/{country}', [OrderController::class, 'getAddress']);
 Route::get('/order/getAddress/id/{provinceId}', [OrderController::class, 'getRegencies']);

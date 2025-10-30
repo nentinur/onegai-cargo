@@ -81,25 +81,85 @@
         </div>
     </div>
 
+    {{-- Carousel Image --}}
+    <div id="indicators-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <img src="{{ asset('assets/carousel/1.png') }}" class="absolute block w-full h-full object-cover"
+                    alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('assets/carousel/2.png') }}" class="absolute block w-full h-full object-cover"
+                    alt="...">
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
     {{-- Kontak Section --}}
     <div id="contact" class="w-full px-4 md:px-10 bg-gradient-to-t from-orange-100 to-white py-10">
         <h2
             class="text-2xl md:text-4xl my-10 md:mt-16 font-bold text-center text-primary-dark transition hover:scale-105 duration-300">
             Kontak kami</h2>
         <div class="flex flex-col md:flex-row px-2 md:px-12 gap-8 md:gap-4 items-center w-full">
-            <div class="w-full md:w-1/6 md:px-3 flex justify-center md:justify-between">
-                <img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-24 md:w-34" alt="">
+            <div class="w-full md:w-1/2 md:px-3 flex justify-center md:justify-between">
+                <div class="relative w-full h-80 m-3 bg-white rounded-lg shadow-lg border-4 border-white">
+                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.2188040565408!2d107.743246!3d-6.9055219999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68dda44ce380c5%3A0x9250a657cfafdc00!2sOnegai%20Cargo!5e0!3m2!1sid!2sid!4v1761571777212!5m2!1sid!2sid"
+                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                    </iframe>
+                </div>
             </div>
-            <div class="w-full md:w-5/6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                 <div>
                     <h2 class="pl-2 text-lg md:text-xl font-bold text-primary-dark">Alamat</h2>
                     <a class="flex items-start mt-2 text-primary-dark" href="https://maps.app.goo.gl/6TEAKiLTNy6nu9L98"><i
-                            class="ph ph-map-pin px-2 mt-2 text-xl"></i><span>Komplek Bumi Langgeng, Blok 19, No.5, RT 04/RW
+                            class="ph ph-map-pin px-2 md:mt-2 text-xl"></i><span>Komplek Bumi Langgeng, Blok 19, No.5, RT
+                            04/RW
                             22, Kel. Cimekar, Kec.
                             Cileunyi, Kab. Bandung, 40624</span></a>
+                    <div class="md:flex justify-center mt-4 hidden">
+                        <img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-20 md:w-34" alt="">
+                    </div>
                 </div>
                 <div>
-                    <h2 class=" pl-2 text-lg md:text-xl font-bold text-primary-dark">Kontak WhatsApp</h2>
+                    <h2 class="md:mt-2 pl-2 text-lg md:text-xl font-bold text-primary-dark">Kontak WhatsApp</h2>
                     <ul class="mt-2 space-y-1.5">
                         <li class="text-primary-dark">
                             <a class="flex items-center"
@@ -120,9 +180,7 @@
                                 <span>Admin Cargo Japan-Indo</span></a>
                         </li>
                     </ul>
-                </div>
-                <div>
-                    <h2 class="pl-2 text-lg md:text-xl font-bold text-primary-dark">Media Sosial</h2>
+                    <h2 class="pl-2 text-lg md:text-xl font-bold text-primary-dark mt-4">Media Sosial</h2>
                     <ul class="mt-2 space-y-1.5">
                         <li class="text-primary-dark">
                             <a class="flex items-center" href="mailto:onegaicargo@gmail.com"><i
@@ -142,4 +200,8 @@
                 rights reserved</p>
         </div>
     </div>
+    <a href="https://api.whatsapp.com/send?phone=6282119777677&text=Hallo%20onegai%20cargo%2C%20boleh%20info%20jastip%20indo%20-%20jepang%20nya%3F"
+        class="fixed bottom-6 right-6 flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg hover:scale-110 transition-all duration-300 z-[9999] backdrop-blur-sm bg-opacity-90">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+    </a>
 @endsection
