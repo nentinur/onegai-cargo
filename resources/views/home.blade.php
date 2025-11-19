@@ -95,6 +95,21 @@
                 <img src="{{ asset('assets/carousel/2.png') }}" class="absolute block w-full h-full object-cover"
                     alt="...">
             </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('assets/carousel/3.png') }}" class="absolute block w-full h-full object-cover"
+                    alt="...">
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('assets/carousel/4.png') }}" class="absolute block w-full h-full object-cover"
+                    alt="...">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="{{ asset('assets/carousel/5.png') }}" class="absolute block w-full h-full object-cover"
+                    alt="...">
+            </div>
         </div>
         <!-- Slider indicators -->
         <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
@@ -190,7 +205,10 @@
                             <a class="flex items-center" href="https://www.instagram.com/onegai.cargo/"><i
                                     class="ph ph-instagram-logo px-2 text-xl"></i><span>onegai.cargo</span></a>
                         </li>
-
+                        <li class="text-primary-dark">
+                            <a class="flex items-center" href="https://www.tiktok.com/@onegaicargo"><i
+                                    class="ph ph-tiktok-logo px-2 text-xl"></i><span>@onegaicargo</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
