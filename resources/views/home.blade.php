@@ -82,7 +82,7 @@
     </div>
 
     {{-- Carousel Image --}}
-    <div id="indicators-carousel" class="relative w-full" data-carousel="slide">
+    <div id="indicators-carousel" class="relative w-1/3" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
