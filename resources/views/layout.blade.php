@@ -41,7 +41,7 @@
 </head>
 
 <body class="bg-white">
-    <div class="w-full fixed top-0 left-0 md:h-18 z-10 flex items-center justify-between px-6 bg-white shadow-md">
+    <div class="w-full fixed top-0 left-0 md:h-18 z-[1000] flex items-center justify-between px-6 bg-white shadow-md">
         <div><img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-12 md:w-14 py-2" alt=""></div>
         <div class="ml-2 flex items-center">
             <span class="text-primary-dark font-semibold text-lg md:text-2xl tracking-wide">
