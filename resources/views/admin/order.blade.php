@@ -51,7 +51,7 @@
                                     <i class="ph ph-pencil font-bold"></i>
                                 </button>
                                 <button class="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded-lg"
-                                    onclick="openModalDelete({{ $order->id }}, '{{ addslashes($order->kode_resi) }}')">
+                                    onclick="openModalDelete({{ $order->id }}, '{{ addslashes($order->kode_resi) }}', '{{ addslashes($order->nama_penerima) }}')">
                                     <i class="ph ph-trash font-bold"></i>
                                 </button>
                             </div>
@@ -86,6 +86,7 @@
                         <input name="id" type="text" value="" id="deleteOrderId" hidden>
                         <h1>Yakin menghapus data ini?</h1>
                         <h1>No Resi: <span id="deleteResi"></span></h1>
+                        <h1>Nama: <span id="deleteName"></span></h1>
                     </div>
                     <!-- Action Buttons -->
                     <div class="flex justify-between gap-2 mt-6">
@@ -173,9 +174,10 @@
     </div>
 
     <script>
-        function openModalDelete(id, resi) {
+        function openModalDelete(id, resi, nama) {
             $('#deleteOrderId').val(id);
             $('#deleteResi').text(resi);
+            $('#deleteName').text(nama);
             document.getElementById("modalDelete").classList.remove("hidden");
         }
 
