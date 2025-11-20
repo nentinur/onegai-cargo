@@ -57,6 +57,14 @@
                         </select>
                     </div>
                     <div class="flex flex-col gap-1">
+                        <label class="font-bold text-primary-dark">Estimasi</label>
+                        <select class="w-full border border-primary-light rounded px-3 py-2" name="estimasi" id="estimasi"
+                            required>
+                            <option selected value="1">14 Hari</option>
+                            <option value="2">30 Hari</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1">
                         <label class="font-bold text-primary-dark">Nama Penerima</label>
                         <input type="text" name="nama_penerima"
                             class="w-full border border-primary-light rounded px-3 py-2" required />

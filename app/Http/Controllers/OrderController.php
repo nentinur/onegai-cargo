@@ -30,6 +30,7 @@ class OrderController extends Controller
             'alamat_penerima' => 'required',
             'berat_barang' => 'required|integer',
             'destinasi' => 'required',
+            'estimasi' => 'required'
         ]);
 
         // inisialisasi kode_resi
@@ -64,7 +65,6 @@ class OrderController extends Controller
 
 
         // Mail::to($validatedData['email_pengirim'])->send(new \App\Mail\OrderNotification($data)); 
-
         if (Customer::create($validatedData)) {
             // Customer berhasil dibuat
             $data = [
@@ -73,7 +73,7 @@ class OrderController extends Controller
                 'body' => 'Telah melakukan order dengan nomer resi: ' . $validatedData['kode_resi'],
             ];
             Notification::route('mail', 'aisyiahmissi@gmail.com') //'khafidz.edu@gmail.com') //
-                ->notify(new OrderNotification($data));
+            ->notify(new OrderNotification($data));
             return redirect('/order?kode_resi=' . $validatedData['kode_resi'])
                 ->with('success', 'Order berhasil dibuat! Kode resi Anda: ' . $validatedData['kode_resi']);
         } else {

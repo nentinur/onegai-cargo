@@ -63,7 +63,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        @if (date_diff($tracking["created_at"], now())->days > 3 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -80,7 +80,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        @if (date_diff($tracking["created_at"], now())->days > 3 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -95,7 +95,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -112,7 +112,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -128,7 +128,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -143,7 +143,7 @@
                         </div>
                         @endif
 
-                        @if (date_diff($tracking["created_at"], now())->days > 5)
+                        @if (date_diff($tracking["created_at"], now())->days > 5 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -185,7 +185,7 @@
                         @endif
                         
 
-                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        @if (date_diff($tracking["created_at"], now())->days > 3 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -200,7 +200,7 @@
                         </div>
                         @endif
                         
-                        @if (date_diff($tracking["created_at"], now())->days > 3)
+                        @if (date_diff($tracking["created_at"], now())->days > 3 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -218,7 +218,7 @@
 
                         
 
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -237,7 +237,7 @@
 
                         
 
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -253,7 +253,7 @@
                         @endif
                         
                         
-                        @if (date_diff($tracking["created_at"], now())->days > 4)
+                        @if (date_diff($tracking["created_at"], now())->days > 4 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
@@ -270,7 +270,7 @@
                         </div>
                         @endif
                         
-                        @if (date_diff($tracking["created_at"], now())->days > 5)
+                        @if (date_diff($tracking["created_at"], now())->days > 5 * $tracking["estimasi"])
                         <div class="bg-orange-50 border border-orange-200 rounded-lg shadow p-4 flex flex-col items-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" viewBox="0 0 40 40" fill="none">
                                 <rect width="40" height="40" rx="8" fill="#FFEDD5"/>
