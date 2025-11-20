@@ -27,6 +27,7 @@
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Nama</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Telepon</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Alamat</th>
+                    <th class="cursor-pointer px-4 py-2 border border-gray-300">Est</th>
                     <th class="cursor-pointer px-4 py-2 border border-gray-300">Aksi
                     </th>
                 </tr>
@@ -42,10 +43,11 @@
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->nama_penerima }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->no_telp_penerima }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->alamat_penerima }}</td>
+                        <td class="cursor-pointer px-4 py-2 border border-gray-300">{{ $order->estimasi>1 ? "30Hr" : "14Hr" }}</td>
                         <td class="cursor-pointer px-4 py-2 border border-gray-300">
                             <div class="flex space-x-2">
                                 <button class="bg-primary hover:bg-primary-light text-white px-2 py-1 rounded-lg"
-                                    onclick="openModalEdit('{{ $order->id }}', '{{ addslashes($order->kode_resi) }}', '{{ addslashes($order->nama_penerima) }}', '{{ addslashes($order->no_telp_penerima) }}', '{{ addslashes($order->alamat_penerima) }}')">
+                                    onclick="openModalEdit('{{ $order->id }}', '{{ addslashes($order->kode_resi) }}', '{{ addslashes($order->nama_penerima) }}', '{{ addslashes($order->no_telp_penerima) }}', '{{ addslashes($order->destinasi) }}', '{{ addslashes($order->estimasi) }}', '{{ addslashes($order->alamat_penerima) }}')">
                                     <i class="ph ph-pencil font-bold"></i>
                                 </button>
                                 <button class="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded-lg"
@@ -132,6 +134,24 @@
                                 class="w-full border border-primary-light rounded px-3 py-2" />
                         </div>
                         <div class="flex flex-col gap-1">
+                        <label class="font-bold text-primary-dark">Destinasi</label>
+                        <select class="w-full border border-primary-light rounded px-3 py-2" name="destinasi" id="editDestinasi"
+                            required>
+                            <option value="">Pilih Rute</option>
+                            <option value="id_jp">Indonesia - Jepang</option>
+                            <option value="jp_id">Jepang - Indonesia</option>
+                        </select>
+                    </div>
+                        <div class="flex flex-col gap-1">
+                        <label class="font-bold text-primary-dark">Estimasi</label>
+                        <select class="w-full border border-primary-light rounded px-3 py-2" name="estimasi" id="editEstimasi"
+                            required>
+                            <option value="">Pilih Estimasi</option>
+                            <option value="1">14 Hari</option>
+                            <option value="2">30 Hari</option>
+                        </select>
+                    </div>
+                        <div class="flex flex-col gap-1">
                             <label class="font-bold text-primary-dark">Alamat Penerima</label>
                             <textarea name="alamat_penerima" class="w-full border border-primary-light rounded px-3 py-2" id="editAlamat"></textarea>
                         </div>
@@ -163,12 +183,14 @@
             document.getElementById("modalDelete").classList.add("hidden");
         }
 
-        function openModalEdit(id, resi, nama, telepon, alamat) {
+        function openModalEdit(id, resi, nama, telepon, destinasi, estimasi, alamat) {
             $('#editOrderId').val(id);
             $('#editResi').val(resi);
             $('#editNama').val(nama);
             $('#editTelepon').val(telepon);
-            $('#editAlamat').val(alamat);
+            $('#editDestinasi').val(destinasi);
+            $('#editEstimasi').val(estimasi);
+            $('#editAlamat').text(alamat);
             document.getElementById("modalEdit").classList.remove("hidden");
         }
 
