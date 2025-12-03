@@ -57,7 +57,7 @@
                 </div>
                 <h3 class="text-lg md:text-xl font-semibold mt-2 text-blue-400">Harga Ekonomis</h3>
                 <p class="mt-1 text-sm text-gray-900 text-center">
-                    Ongkir mulai ¥1000/KG — solusi paling murah di Jepang raya.
+                    Ongkir mulai ¥1000/KG — solusi paling murah Indo-Jepang.
                 </p>
             </div>
             <div
