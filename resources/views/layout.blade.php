@@ -44,7 +44,7 @@
     <div class="w-full fixed top-0 left-0 md:h-18 z-[1000] flex items-center justify-between px-6 bg-white shadow-md">
         <div><img src="{{ asset('assets/logo/OIC_BROWN.png') }}" class="w-12 md:w-14 py-2" alt=""></div>
         <div class="ml-2 flex items-center">
-            <span class="text-primary-dark font-semibold text-lg md:text-2xl tracking-wide">
+            <span class="text-primary-dark font-semibold text-xl md:text-base tracking-wide">
                 Berangkat setiap hari, Ga pakai nanti !
             </span>
         </div>
@@ -56,10 +56,10 @@
         </div>
         <!-- Navbar -->
         <nav id="nav-menu" class="hidden md:flex space-x-4 items-center">
-            <a href="/" class="font-bold text-primary-dark hover:text-dark-primary">Beranda</a>
-            <a href="/#about" class="font-bold text-primary-dark hover:text-dark-primary">Tentang Kami</a>
-            <a href="/#contact" class="font-bold text-primary-dark hover:text-dark-primary">Kontak</a>
-            <a href="/tracking" class="font-bold text-primary-dark hover:text-dark-primary">Tracking</a>
+            <a href="/" class="font-bold text-primary-dark hover:text-dark-primary md:text-xs">Beranda</a>
+            <a href="/#about" class="font-bold text-primary-dark hover:text-dark-primary md:text-xs">Tentang Kami</a>
+            <a href="/#contact" class="font-bold text-primary-dark hover:text-dark-primary md:text-xs">Kontak</a>
+            <a href="/tracking" class="font-bold text-primary-dark hover:text-dark-primary md:text-xs">Tracking</a>
             {{-- <a href="/order"
                 class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition transform hover:scale-105">
                 Pesan Layanan

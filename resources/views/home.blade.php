@@ -15,7 +15,8 @@
                 ribet — barang Anda sampai tujuan dengan senyum.
             </p>
             <p class="mt-4 text-gray-600">
-                Yuk, kirim sekarang! Klik tombol di bawah untuk mulai pemesanan.
+                Yuk, kirim sekarang!
+                {{-- Klik tombol di bawah untuk mulai pemesanan. --}}
             </p>
             {{-- <a href="/order"
                 class="mt-10 inline-block bg-primary hover:bg-primary-dark text-white px-6 md:px-8 py-3 rounded-lg transition transform hover:scale-105">
@@ -23,7 +24,7 @@
             </a> --}}
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-            <img src="{{ asset('assets/gif/delivery.gif') }}" alt="" class="w-48 md:w-80 rounded-full">
+            <img src="{{ asset('assets/gif/delivery.gif') }}" alt="" class="w-1/2 md:w-96 rounded-full">
         </div>
     </div>
 
@@ -32,7 +33,7 @@
         class="flex flex-col w-full px-4 md:px-10 min-h-screen bg-gradient-to-b from-blue-100 to-white py-10 md:py-20">
         <div class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-8">
             <div class="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-                <img src="{{ asset('assets/gif/customer.gif') }}" alt="" class="w-48 md:w-80 rounded-full">
+                <img src="{{ asset('assets/gif/customer.gif') }}" alt="" class="w-1/2 md:w-80 rounded-full">
             </div>
             <div class="w-full md:w-1/2">
                 <h2
